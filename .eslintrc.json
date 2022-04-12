@@ -1,5 +1,8 @@
 {
   "extends": ["next/core-web-vitals"],
+  "globals": {
+    "Promise": true
+  },
   "rules": {
     "no-console": "off",
     "dot-location": 0,
@@ -34,6 +37,7 @@
       0,
       "single"
     ],
+    "@next/next/no-css-tags":0,
     "key-spacing": 2,
     "comma-dangle": [
       "error",
