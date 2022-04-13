@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import request from '../../utils/http'
 
 export async function getServerSideProps(ctx) {
@@ -23,7 +25,11 @@ export default function Details({ data }) {
   }
   return (
     <div>
-      <h2 className="m-b-20">{data.title}</h2>
+      <Head>
+        <title>{data.title}</title>
+        <meta name="description" content={data.title} />
+      </Head>
+      <h1 className="m-b-20">{data.title}</h1>
       <div dangerouslySetInnerHTML={createMarkup(data.content)}></div>
     </div>
   )
