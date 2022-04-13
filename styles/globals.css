@@ -53,6 +53,8 @@ video {
 }
 pre {
   background-color: #f1f2f3;
+  line-height: 28px;
+  padding-left: 10px;
 }
 a {
   text-decoration: none;
@@ -92,4 +94,7 @@ li {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+.m-b-20 {
+  margin-bottom: 20px;
 }

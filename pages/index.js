@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useState } from 'react'
 // import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 import NavList from '../components/NavList'
@@ -28,7 +29,7 @@ async function getData(id) {
   }
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const {
     data: { data }
   } = await request({
@@ -77,10 +78,12 @@ export default function Home(props) {
             {list.length ? (
               list.map((item) => {
                 return (
-                  <li className={styles.liItem} key={item._id}>
-                    <h2 className={styles.blogTitle}>{item.title}</h2>
-                    <div className="es" dangerouslySetInnerHTML={createMarkup(item.content)}></div>
-                  </li>
+                  <Link href={'/details/' + item._id} key={item._id} passHref>
+                    <li className={styles.liItem}>
+                      <h2 className={styles.blogTitle}>{item.title}</h2>
+                      <div className="es" dangerouslySetInnerHTML={createMarkup(item.content)}></div>
+                    </li>
+                  </Link>
                 )
               })
             ) : (
