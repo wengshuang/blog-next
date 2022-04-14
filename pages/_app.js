@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
+  console.log('MyApp')
   return (
     <>
       <Header />

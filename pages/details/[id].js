@@ -1,8 +1,16 @@
 import Head from 'next/head'
-
+import { useEffect } from 'react'
 import request from '../../utils/http'
 
 export async function getServerSideProps(ctx) {
+  console.log(333333)
+  await request({
+    url: '/blogs/updateViews',
+    method: 'get',
+    data: {
+      id: ctx.params.id
+    }
+  })
   const {
     data: { data = {} }
   } = await request({
@@ -19,10 +27,14 @@ export async function getServerSideProps(ctx) {
   }
 }
 
-export default function Details({ data }) {
+const Details = ({ data }) => {
+  console.log('Details')
   function createMarkup(content) {
     return { __html: content }
   }
+  useEffect(() => {
+    console.log('getServerSideProps')
+  }, [])
   return (
     <div className="details">
       <Head>
@@ -34,3 +46,4 @@ export default function Details({ data }) {
     </div>
   )
 }
+export default Details
