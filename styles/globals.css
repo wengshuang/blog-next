@@ -98,3 +98,10 @@ li {
 .m-b-20 {
   margin-bottom: 20px;
 }
+.details ul,
+.details ol {
+  padding-left: 20px;
+}
+.details ol li {
+  list-style: decimal;
+}

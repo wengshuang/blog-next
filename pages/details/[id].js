@@ -24,7 +24,7 @@ export default function Details({ data }) {
     return { __html: content }
   }
   return (
-    <div>
+    <div className="details">
       <Head>
         <title>{data.title}</title>
         <meta name="description" content={data.title} />

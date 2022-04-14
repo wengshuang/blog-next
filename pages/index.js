@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.css'
 import NavList from '../components/NavList'
 import request from '../utils/http'
 import NoData from '../components/NoData'
-async function getData(id) {
+async function getData(id = '') {
   console.log(id)
   try {
     const {
@@ -38,7 +38,7 @@ export async function getServerSideProps() {
   })
   // console.log(data, 'data')
   if (data && data.length) {
-    const res = await getData(data[0]._id)
+    const res = await getData()
     // console.log(res, 'res')
     return {
       props: {

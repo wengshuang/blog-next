@@ -2,8 +2,11 @@ import { useState } from 'react'
 import style from './index.module.css'
 
 export default function NavList({ data, itemClick }) {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(null)
   const viewBlog = (id, index) => {
+    if (active === index) {
+      return
+    }
     setActive(index)
     itemClick(id)
   }
