@@ -48,7 +48,7 @@ axiosInstance.interceptors.response.use(
 // axios实例拦截请求
 axiosInstance.interceptors.request.use(
   (config) => {
-    console.log(config, 'config')
+    // console.log(config, 'config')
     return config
   },
   (error) => {
