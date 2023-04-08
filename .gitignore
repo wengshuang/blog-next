@@ -30,9 +30,4 @@ yarn-error.log*
 
 # vercel
 .vercel
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/.gitignore
-/.idea/blog-next.iml
-/.idea/modules.xml
-/.idea/vcs.xml
-/.idea/git_toolbox_prj.xml
+/.idea/
