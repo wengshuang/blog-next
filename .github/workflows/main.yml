@@ -20,12 +20,13 @@ jobs:
       run: yarn install
 
     - name: Build and export app
-      run: yarn build && yarn export
+      run: yarn build
 
     - name: Serve app
       run: yarn global add serve && serve -s dist
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.GH_TOKEN }}
-        FOLDER: dist
+        folder: dist
